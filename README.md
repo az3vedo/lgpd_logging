@@ -1,5 +1,5 @@
 # lgpd_logging
-# Projeto Segurança da Informação
+# Projeto de Segurança da Informação
 Repositório para a Segurança da Informação na FATEC SJC
 Este projeto é um sistema de logs para queries.
 
