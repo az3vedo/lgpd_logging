@@ -15,16 +15,18 @@ public class UsuarioDTO {
 	private String email;
 	private String nome;
 	private String senha;
+	private String cpf;
 	
 	public Usuario toEntityInsert(UsuarioDTO usuarioDTO) {
 		return new Usuario(
-				null, email, nome, senha);
+				null, email, nome, senha, cpf);
 	}
 	
 	public Usuario toEntityUpdate(Usuario usuario) {
 		usuario.setEmail(this.email);
 		usuario.setNome(this.nome);
 		usuario.setSenha(this.senha);
+		usuario.setCpf(this.cpf);
 		return usuario;
 	}
 }

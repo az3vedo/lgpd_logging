@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fatec.backend.domain.Usuario;
@@ -58,10 +59,19 @@ public class UsuarioResource {
 		return ResponseEntity.ok().build();
 	}
 	
+	@ApiOperation(value="Busca todos os usuários")
 	@GetMapping("/buscarTodos")
 	public ResponseEntity<List<Usuario>> buscarTodos() {
 		List<Usuario> usuarios = usuarioService.buscarTodos();
 		return ResponseEntity.ok().body(usuarios);
 	}
+	
+	@ApiOperation(value="Busca usuários por CPF")
+	@GetMapping("/buscarUsuarioPorCpf")
+	public ResponseEntity<List<UsuarioDTO>> buscarUsuarioPorCpf(@RequestParam String cpf) throws Exception{
+			List<UsuarioDTO> listaUsuarioDTO = usuarioService.buscarUsuarioPorCpf(cpf);
+		return ResponseEntity.ok().body(listaUsuarioDTO);
+	}
+
 	
 }

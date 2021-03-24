@@ -22,9 +22,9 @@ public class BackendApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Usuario usuario1 = new Usuario(null, "usuario1@fatec.com.br", "Usuario 1", "123");
-		Usuario usuario2 = new Usuario(null, "usuario2@fatec.com.br", "Usuario 2", "Senha legal");
-		Usuario usuario3 = new Usuario(null, "usuario3@fatec.com.br", "Usuario 3", "321");
+		Usuario usuario1 = new Usuario(null, "usuario1@fatec.com.br", "Usuario 1", "123", "000.000.000-00");
+		Usuario usuario2 = new Usuario(null, "usuario2@fatec.com.br", "Usuario 2", "Senha legal", "111.111.111-11");
+		Usuario usuario3 = new Usuario(null, "usuario3@fatec.com.br", "Usuario 3", "321", "222.222.222-22");
 		
 		usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2, usuario3));
 	}
