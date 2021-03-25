@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fatec.backend.domain.Usuario;
 import com.fatec.backend.dto.UsuarioDTO;
+import com.fatec.backend.services.LogUsuarioService;
 import com.fatec.backend.services.UsuarioService;
 
 import io.swagger.annotations.Api;
@@ -30,17 +31,22 @@ public class UsuarioResource {
 	
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+	private LogUsuarioService logUsuarioService;
 
 	@ApiOperation(value="Retorna um usuário buscando por seu ID")
-	@GetMapping("/buscarPorId/{id}")
-	public ResponseEntity<Usuario> buscarPorId(@PathVariable Long id) {
+	@GetMapping("/buscarPorId/{cpf}/{id}")
+	public ResponseEntity<Usuario> buscarPorId(@PathVariable String cpf, @PathVariable Long id) {
+		logUsuarioService.inserir(cpf, "BUSCA", "USUARIO");
 		Usuario usuario = usuarioService.buscarPorId(id);
 		return ResponseEntity.ok().body(usuario);
 	}
 	
 	@ApiOperation(value="Cadastra um usuário")
-	@PostMapping("/cadastrar")
-	public ResponseEntity<UsuarioDTO> cadastrar( @RequestBody UsuarioDTO Usuario) {
+	@PostMapping("/cadastrar/{cpf}")
+	public ResponseEntity<UsuarioDTO> cadastrar(@PathVariable String cpf, @RequestBody UsuarioDTO Usuario) {
+		logUsuarioService.inserir(cpf, "CADASTRO", "USUARIO");
 		usuarioService.inserir(Usuario);
 		return ResponseEntity.ok(Usuario);
 	}
@@ -55,6 +61,7 @@ public class UsuarioResource {
 	@ApiOperation(value="Deleta um usuário")
 	@DeleteMapping("excluir/{id}")
 	public ResponseEntity<Void> apagar( @PathVariable Long id) {
+		
 		usuarioService.deletar(id);
 		return ResponseEntity.ok().build();
 	}

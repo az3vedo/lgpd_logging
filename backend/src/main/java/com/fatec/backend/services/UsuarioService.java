@@ -31,7 +31,7 @@ public class UsuarioService {
 	
 	public Usuario buscarPorId(Long id) {
 		Optional<Usuario> usuario = usuarioRepository.findById(id);
-		return usuario.orElseThrow(() -> new ObjectNotFoundException("Usuario não encontrado!", null));
+		return usuario.orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado!", null));
 	}
 	
 	public Usuario inserir(UsuarioDTO usuarioDTO) {
