@@ -52,30 +52,33 @@ public class UsuarioResource {
 	}
 	
 	@ApiOperation(value="Edita um usuário")
-	@PutMapping(value = "/editar/{id}")
-	public ResponseEntity<UsuarioDTO> alterar(@RequestBody UsuarioDTO usuarioDTO) throws Exception {
+	@PutMapping(value = "/editar/{cpf}/{id}")
+	public ResponseEntity<UsuarioDTO> alterar(@PathVariable String cpf, @RequestBody UsuarioDTO usuarioDTO) throws Exception {
+		logUsuarioService.inserir(cpf, "EDIÇÃO", "USUARIO");
 		usuarioService.alterar(usuarioDTO);
 		return  ResponseEntity.ok(usuarioDTO);
 	}
 	
 	@ApiOperation(value="Deleta um usuário")
-	@DeleteMapping("excluir/{id}")
-	public ResponseEntity<Void> apagar( @PathVariable Long id) {
-		
+	@DeleteMapping("excluir/{cpf}/{id}")
+	public ResponseEntity<Void> apagar(@PathVariable String cpf, @PathVariable Long id) {
+		logUsuarioService.inserir(cpf, "EXCLUSÃO", "USUARIO");
 		usuarioService.deletar(id);
 		return ResponseEntity.ok().build();
 	}
 	
 	@ApiOperation(value="Busca todos os usuários")
-	@GetMapping("/buscarTodos")
-	public ResponseEntity<List<Usuario>> buscarTodos() {
+	@GetMapping("/buscarTodos/{cpf}")
+	public ResponseEntity<List<Usuario>> buscarTodos(@PathVariable String cpf) {
+		logUsuarioService.inserir(cpf, "BUSCA", "USUARIO");
 		List<Usuario> usuarios = usuarioService.buscarTodos();
 		return ResponseEntity.ok().body(usuarios);
 	}
 	
 	@ApiOperation(value="Busca usuários por CPF")
-	@GetMapping("/buscarUsuarioPorCpf")
+	@GetMapping("/buscarUsuarioPorCpf/{cpf}")
 	public ResponseEntity<List<UsuarioDTO>> buscarUsuarioPorCpf(@RequestParam String cpf) throws Exception{
+			logUsuarioService.inserir(cpf, "BUSCA", "USUARIO");
 			List<UsuarioDTO> listaUsuarioDTO = usuarioService.buscarUsuarioPorCpf(cpf);
 		return ResponseEntity.ok().body(listaUsuarioDTO);
 	}
