@@ -16,7 +16,7 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 
 - [BACK] Método-Inserção
 - [BACK] Método-Consulta
-- [BACK] Método-Atualiza
+- [BACK] Método-Atualização
 - [BACK] Método-Remoção
 - [BACK] Método-Logs
 - [BACK] Registro de Logs
