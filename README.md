@@ -10,6 +10,7 @@
    * [Projeto de Segurança da Informação](#projeto-de-segurança-da-informação)
    * [Objetivo](#objetivo)
    * [Situação Atual](#situação-atual)
+   * [Tecnologias](#tecnologias)
    * [Backlog](#backlog)
       * [Sprint 1](#sprint-1)
       * [Sprint 2](#sprint-2)
@@ -36,6 +37,7 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 - [Maven](https://maven.apache.org/guides/)
 - [Heroku](https://devcenter.heroku.com/categories/reference)
 - [PostgreSQL](https://www.postgresql.org/docs/)
+
 ### :bookmark_tabs: Backlog 
 
 #### Sprint 1 (28/03) 
