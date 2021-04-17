@@ -5,7 +5,7 @@
 </h4>
 
 ### :checkered_flag: Índice :checkered_flag:
-=================
+
 <!--ts-->
    * [Projeto de Segurança da Informação](#projeto-de-segurança-da-informação)
    * [Objetivo](#objetivo)
@@ -58,7 +58,7 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 * [ ] [BACK] Filtro - Logs (Exibição dos Logs)
 
 ### :date: Sequencia de Atividades :date:
-![Sequencia de atividades](linkaqui.png)
+![Sequencia de atividades](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/sequenciaAtividade.png)
 
 ### 	:two_men_holding_hands: Team :two_women_holding_hands:
 - SM: [Tábatha Fróes](https://github.com/tabathafroes)
