@@ -45,18 +45,6 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 ## :rocket: Instruções de uso <a name="instruções"></a>
 - No terminal, clone o projeto:
     - git clone https://github.com/az3vedo/lgpd_logging.git
-- Entre na pasta do projeto:
-    - cd Billinho
-- Instale as dependencias: 
-    - bundle install
-- Crie o banco de dados:
-    - rails db:create
-    - rails db:migrate
-- Preencha o banco de dados:
-    - rails db:seed
-- Rode a aplicação
-    - rails s
-- Utilize o Postman para acessar a aplicação a partir da rota http://localhost:3000/
 
 ### :bookmark_tabs: Backlog <a name="backlog"></a>
 
