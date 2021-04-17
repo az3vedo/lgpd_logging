@@ -29,6 +29,13 @@ Criar API que possibilite a evidenciação de ações (CRUD) em um banco de dado
 ### :triangular_flag_on_post: Situação atual
 Sistema de banco de dados ainda não adaptado para lei geral de proteção de dados, sistema não contém logs que evidencie ações realizadas no banco de dados.
 
+### **:computer: TECNOLOGIAS**
+- [Java](https://docs.oracle.com/en/java/javase/11/): versão 11
+- [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+- [Hibernate](https://hibernate.org/orm/documentation/5.4/)
+- [Maven](https://maven.apache.org/guides/)
+- [Heroku](https://devcenter.heroku.com/categories/reference)
+- [PostgreSQL](https://www.postgresql.org/docs/)
 ### :bookmark_tabs: Backlog 
 
 #### Sprint 1 (28/03) 
