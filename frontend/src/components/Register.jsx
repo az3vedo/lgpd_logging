@@ -22,30 +22,43 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const ValidationTextField = withStyles({
+const InputField = ({ error, required, value, onChange, label, inputMode, type }) => {
+  return <ValidationTextField
+    value={value}
+    error={!!value ? error : false}
+    isEmpty={!!value}
+    inputMode={inputMode}
+    onChange={onChange}
+    style={{ width: '100%' }}
+    variant="outlined"
+    label={label}
+    required={required}
+    type={type}
+  />
+}
+const ValidationTextField = withStyles(isEmpty => ({
   root: {
     '& input:valid + fieldset': {
       borderColor: 'green',
       borderWidth: 2,
     },
     '& input:invalid + fieldset': {
-      borderColor: 'red',
+      borderColor: isEmpty ? 'grey' : 'red',
       borderWidth: 2,
     },
-    '& input:valid:focus + fieldset': {
-      borderLeftWidth: 6,
-      padding: '4px !important',
+    '& input:hover': {
+
     },
   },
-})(TextField);
+}))(TextField);
 
 
-export default ({onRegisterUser}) => {
+export default ({ onRegisterUser }) => {
   const [user, setUser] = useState({
-    nome: '',
-    email: '',
+    nome: undefined,
+    email: undefined,
     cpf: undefined,
-    senha: '',
+    senha: undefined,
   })
   const [checked, setChecked] = useState(false);
   const validateString = (word) => !!word && !!word.length;
@@ -83,28 +96,27 @@ export default ({onRegisterUser}) => {
       return false;
     return true;
   }
-  const maskCPF = (cpf) => {                                                                                                        
-    if (!cpf) return '';                                                                                                                            
-    if (cpf.length < 4) return cpf;                                                                                                                  
-    let masked = `${cpf.substring(0, 3)}.${cpf.substring(3, 6)}`;                                                        
-    if (cpf.length > 6) {                                                                                                                            
-      masked += `.${cpf.substring(6, 9)}`;                                                                                                          
-    }                                                                                                                                                
-    if (cpf.length > 9) {                                                                                                                          
-      masked += `-${cpf.substring(9, 11)}`;                                                                                                        
-   }                                                                                                                                              
-    return masked;                                                                                                                                  
-  };                          
+  const maskCPF = (cpf) => {
+    if (!cpf) return '';
+    if (cpf.length < 4) return cpf;
+    let masked = `${cpf.substring(0, 3)}.${cpf.substring(3, 6)}`;
+    if (cpf.length > 6) {
+      masked += `.${cpf.substring(6, 9)}`;
+    }
+    if (cpf.length > 9) {
+      masked += `-${cpf.substring(9, 11)}`;
+    }
+    return masked;
+  };
 
- const unmaskCPF = (cpf) => {                                                                                                      
-  if (!cpf) return '';                                                                                                                            
-   return cpf.replace(/[^0-9]/gi, '').substring(0, 11);                                                                  
-  };    
-
+  const unmaskCPF = (cpf) => {
+    if (!cpf) return '';
+    return cpf.replace(/[^0-9]/gi, '').substring(0, 11);
+  };
   const maskedCPF = maskCPF(user.cpf);
   const verifyAll = () => validateCPF(user.cpf) && validateEmail(user.email) && validateString(user.nome) && validateString(user.senha) && checked;
 
-  console.log(validateCPF(user.cpf) , validateEmail(user.email) , validateString(user.nome) , validateString(user.senha) , checked);
+  console.log(validateCPF(user.cpf), validateEmail(user.email), validateString(user.nome), validateString(user.senha), checked);
 
   useEffect(() => {
     console.log("hello");
@@ -114,67 +126,56 @@ export default ({onRegisterUser}) => {
 
   return (
     <>
-      <div classnome={classes.Banner}>
+      <div className={classes.Banner}>
         <h2>Banner</h2>
       </div>
       <div>
-        <Grid container classnome={classes.grid}>
+        <Grid container className={classes.grid}>
           <Grid item xs={6}>
             <h2>Cadastre-se</h2>
             <p>Insira suas informações para receber nossa Newsletter! :) </p>
           </Grid>
           <Grid item xs={6}>
-            <form classnome={classes.formCadastro} autoComplete="off">
+            <form className={classes.formCadastro} autoComplete="off">
               <Grid container spacing={1} style={{ width: '80%' }}>
                 <Grid item xs={12}>
-                  <ValidationTextField
-                    error={!!user.nome && user.nome.length > 0 && !validateString(user.nome)}
+                  <InputField
+                    error={!validateString(user.nome)}
                     required
                     value={user.nome}
-                    onChange={(event) => setUser({...user, nome: event.target.value})}
-                    style={{ width: '100%' }}
-                    id="outlined-helperText"
+                    onChange={(event) => setUser({ ...user, nome: event.target.value })}
                     label="Nome Completo: "
-                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <ValidationTextField
-                    error={!!user.email && user.email.length > 0 && !validateEmail(user.email)}
+                  <InputField
+                    error={!validateEmail(user.email)}
                     required
                     value={user.email}
-                    onChange={(event) => setUser({...user, email: event.target.value})}
-                    style={{ width: '100%' }}
-                    id="outlined-helperText"
+                    onChange={(event) => setUser({ ...user, email: event.target.value })}
                     label="Email: "
-                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={6}>
-                  <ValidationTextField
-                    type="text"
+                  <InputField
                     error={!validateCPF(user.cpf)}
                     value={maskedCPF}
                     inputMode='numeric'
-                    key='input_cpf'
                     required
-                    onChange={(event) => setUser({...user, cpf: unmaskCPF(event.target.value)})}
+                    onChange={(event) => setUser({ ...user, cpf: unmaskCPF(event.target.value) })}
                     style={{ width: '100%' }}
-                    id="outlined-helperText"
                     label="CPF: "
-                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={6}>
-                  <ValidationTextField
-                    error={!!user.senha && user.senha && !validateString(user.senha)}
+                  <InputField
+                    error={!validateString(user.senha)}
                     value={user.senha}
+                    inputMode='password'
+                    type='password'
                     required
-                    onChange={(event) => setUser({...user, senha: event.target.value})}
-                    style={{ width: '100%' }}
-                    id="outlined-helperText"
+                    onChange={(event) => setUser({ ...user, senha: event.target.value })}
                     label="Senha: "
-                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={12}>
