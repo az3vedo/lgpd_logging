@@ -1,10 +1,10 @@
 # lgpd_logging
 
-<h4 align="center"> 
-	🚧  Em desenvolvimento  🚧
-</h4>
+ 
+###### 🚧  Em desenvolvimento  🚧
 
-### :checkered_flag: Índice :checkered_flag:
+
+### :checkered_flag: Índice 
 
 <!--ts-->
    * [Projeto de Segurança da Informação](#projeto-de-segurança-da-informação)
@@ -20,17 +20,16 @@
 <!--te-->
 
 
-### :lock: Projeto de Segurança da Informação :lock:	
+### :lock: Projeto de Segurança da Informação	
 Repositório para o projeto de Segurança da Informação na FATEC SJC.
 Este projeto é um sistema de logs para queries.
-
-### :dart: Objetivo :dart: 
+ 
 Criar API que possibilite a evidenciação de ações (CRUD) em um banco de dados, para que em casos de exclusão de dados haja um meio de comprovação da ação.
 
-### :triangular_flag_on_post: Situação atual :triangular_flag_on_post:
+### :triangular_flag_on_post: Situação atual
 Sistema de banco de dados ainda não adaptado para lei geral de proteção de dados, sistema não contém logs que evidencie ações realizadas no banco de dados.
 
-### :bookmark_tabs: Backlog :bookmark_tabs:
+### :bookmark_tabs: Backlog 
 
 #### Sprint 1 (28/03) 
 
@@ -43,9 +42,9 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 
 #### Sprint 2 (18/04)
 
-* [ ] [FRONT] Tela Cadastro
-* [ ] [BD] Tabela Usuário
-* [ ] [BACK-BD] Conexão BD
+* [x] [FRONT] Tela Cadastro
+* [x] [BD] Tabela Usuário
+* [x] [BACK-BD] Conexão BD
 
 #### Sprint 3 (16/05)
 
@@ -57,10 +56,10 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 * [ ] [FRONT] Tela-Consulta
 * [ ] [BACK] Filtro - Logs (Exibição dos Logs)
 
-### :date: Sequencia de Atividades :date:
+### :date: Sequencia de Atividades
 ![Sequencia de atividades](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/sequenciaAtividade.png)
 
-### 	:two_men_holding_hands: Team :two_women_holding_hands:
+### 	:two_women_holding_hands: Team 
 - SM: [Tábatha Fróes](https://github.com/tabathafroes)
 - PO: [Gabriel Azevedo](https://github.com/az3vedo)
 - Devs: [Ângelo Lima](https://github.com/angelovlima), [Larissa Takahashi](https://github.com/LarissaMiho), [Natália Neves](https://github.com/natalianeves18) e [Maria Eduarda](https://github.com/Eduarda-Oliveira), [Renato Passos](https://github.com/Renato-Passos)
