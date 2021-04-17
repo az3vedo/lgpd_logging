@@ -40,7 +40,7 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 - [PostgreSQL](https://www.postgresql.org/docs/)
 - [React.js](https://pt-br.reactjs.org/docs/react-api.html)
 - [Axios](https://github.com/axios/axios)
-- [Material-UI]https://material-ui.com/pt/)
+- [Material-UI](https://material-ui.com/pt/)
 
 ## :rocket: Instruções de uso <a name="instruções"></a>
 - No terminal, clone o projeto:
