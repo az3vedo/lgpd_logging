@@ -1,20 +1,11 @@
 package com.fatec.backend;
 
-import java.util.Arrays;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.fatec.backend.domain.Usuario;
-import com.fatec.backend.repositories.UsuarioRepository;
-
 @SpringBootApplication
 public class BackendApplication implements CommandLineRunner{
-	
-	@Autowired
-	private UsuarioRepository usuarioRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
@@ -22,11 +13,6 @@ public class BackendApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Usuario usuario1 = new Usuario(null, "usuario1@fatec.com.br", "Usuario 1", "123", "000.000.000-00");
-		Usuario usuario2 = new Usuario(null, "usuario2@fatec.com.br", "Usuario 2", "Senha legal", "111.111.111-11");
-		Usuario usuario3 = new Usuario(null, "usuario3@fatec.com.br", "Usuario 3", "321", "222.222.222-22");
-		
-		usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2, usuario3));
 	}
 
 }
