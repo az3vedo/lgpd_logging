@@ -25,7 +25,7 @@
 Repositório para o projeto de Segurança da Informação na FATEC SJC.
 Este projeto é um sistema de logs para queries.
  
-Criar API que possibilite a evidenciação de ações (CRUD) em um banco de dados, para que em casos de exclusão de dados haja um meio de comprovação da ação.
+Criar API que possibilite a evidenciação de ações (CRUD) em um banco de dados, para que em casos de criação, consulta, edição e exclusão de dados haja um meio de comprovação da ação.
 
 ### :triangular_flag_on_post: Situação atual <a name="objetivo"></a>
 Sistema de banco de dados ainda não adaptado para lei geral de proteção de dados, sistema não contém logs que evidencie ações realizadas no banco de dados.
