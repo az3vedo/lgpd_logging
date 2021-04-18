@@ -41,9 +41,6 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 - [Axios](https://github.com/axios/axios)
 - [Material-UI](https://material-ui.com/pt/)
 
-<!--## :rocket: Instruções de uso <a name="instruções"></a>
-- No terminal, clone o projeto:
-    - git clone https://github.com/az3vedo/lgpd_logging.git-->
 
 ### :bookmark_tabs: Backlog <a name="backlog"></a>
 
