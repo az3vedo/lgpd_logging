@@ -3,6 +3,7 @@ package com.fatec.backend.domain;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,8 @@ public class LogUsuario implements Serializable{
 	private Long id;
 	private String cpf;
 	private String acao;
+	@Column(name="tabela")
 	private String tabelaAcao;
+	@Column(name="data_da_acao")
 	private LocalDateTime dataHora;
 }
