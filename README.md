@@ -3,6 +3,11 @@
  
 #### 🚧  Em desenvolvimento  🚧
 
+<p align="center">
+  <kbd>
+    <img src="https://i.imgur.com/J0mEabl.gif" alt="Intro">
+  </kbd>
+</p>
 
 ### :checkered_flag: Índice 
 
