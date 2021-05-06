@@ -5,7 +5,9 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles';
+import Login from '../containers/Login';
+import Logout from '../containers/Logout';
 
 const useStyles = makeStyles(() => ({
   grid: {
@@ -192,6 +194,10 @@ export default ({ onRegisterUser }) => {
                 </Grid>
                 <Grid item xs={12}>
                   <Button disabled={!verifyAll()} onClick={() => onRegisterUser(user)}>Cadastrar</Button>
+                </Grid>
+                <Grid item xs={12}>
+                  <Login />
+                  <Logout />
                 </Grid>
               </Grid>
             </form>
