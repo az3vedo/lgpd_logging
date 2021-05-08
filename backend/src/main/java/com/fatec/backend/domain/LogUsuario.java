@@ -26,7 +26,10 @@ public class LogUsuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String cpf;
+	@Column(name="nome_usuario")
+	private String nomeUsuario;
+	@Column(name="email_usuario")
+	private String emailUsuario;
 	private String acao;
 	@Column(name="tabela")
 	private String tabelaAcao;

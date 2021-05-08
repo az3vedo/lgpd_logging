@@ -14,13 +14,14 @@ import lombok.NoArgsConstructor;
 public class LogUsuarioDTO {
 
 	private Long id;
-	private String cpf;
+	private String nomeUsuario;
+	private String emailUsuario;
 	private String acao;
 	private String tabelaAcao;
 	private LocalDateTime dataHora;
 	
 	public LogUsuario toEntityInsert(LogUsuarioDTO logUsuarioDTO) {
 		return new LogUsuario(
-				null, cpf, acao, tabelaAcao, dataHora);
+				null, nomeUsuario, emailUsuario, acao, tabelaAcao, dataHora);
 	}
 }

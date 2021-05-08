@@ -13,12 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fatec.backend.domain.LogUsuario;
 import com.fatec.backend.services.LogUsuarioService;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(value="/logUsuarios")
-@Api(value="API REST LOGS")
 @CrossOrigin(origins="*")
 public class LogUsuarioResource {
 	
