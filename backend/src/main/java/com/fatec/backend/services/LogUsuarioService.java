@@ -27,10 +27,11 @@ public class LogUsuarioService {
 		return logUsuarioRepository.findAll();
 	}
 
-	public LogUsuario inserir(String cpf, String acao, String tabelaAcao) {
+	public LogUsuario inserir(String nomeUsuario, String emailUsuario, String acao, String tabelaAcao) {
 
 		LogUsuarioDTO logUsuarioDTO = new LogUsuarioDTO();
-		logUsuarioDTO.setCpf(cpf);
+		logUsuarioDTO.setNomeUsuario(nomeUsuario);
+		logUsuarioDTO.setEmailUsuario(emailUsuario);
 		logUsuarioDTO.setAcao(acao);
 		logUsuarioDTO.setTabelaAcao(tabelaAcao);
 		logUsuarioDTO.setDataHora(LocalDateTime.now());
