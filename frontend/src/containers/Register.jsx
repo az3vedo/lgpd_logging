@@ -1,6 +1,8 @@
 import React from 'react';
 import RegisterCMP from "../components/Register";
 import api from '../api/api';
+import Login from './Login';
+import Logout from './Logout';
 
  const Register = () => {
 
@@ -26,8 +28,9 @@ import api from '../api/api';
             senha: user.senha
         }
 
-        api.post(`http://localhost:8080/usuarios/cadastrar/${userToPassToBack.cpf}`, userToPassToBack)
+        api.post(`http://localhost:8080/usuarios/cadastrar/${userToPassToBack.nome}/${userToPassToBack.email}`, userToPassToBack)
     }
+
 
     return <RegisterCMP onRegisterUser={createData} />;
 }
