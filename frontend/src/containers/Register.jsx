@@ -3,6 +3,7 @@ import RegisterCMP from "../components/Register";
 import api from '../api/api';
 import Login from './Login';
 import Logout from './Logout';
+import {userLogin} from './Login';
 
  const Register = () => {
 
@@ -28,7 +29,7 @@ import Logout from './Logout';
             senha: user.senha
         }
 
-        api.post(`http://localhost:8080/usuarios/cadastrar/${userToPassToBack.nome}/${userToPassToBack.email}`, userToPassToBack)
+        api.post(`http://localhost:8080/usuarios/cadastrar/${userLogin.name}/${userLogin.email}`, userToPassToBack)
     }
 
 
