@@ -14,24 +14,25 @@ const Login = () => {
 
   const onSuccess = (res) => {
     userLogin = ({
-      name: res.profileObj.name,
+      google_id: res.profileObj.googleId,
       email: res.profileObj.email,
-      googleId: res.profileObj.googleId
+      urlFoto: res.profileObj.imageUrl,
+      nome_completo: res.profileObj.name
     });
 
     api.post(`http://localhost:8080/login/gerarLogLogin`, userLogin);
 
     console.log('Login Success: currentUser:', res.profileObj);
     alert(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
+      `Login realizado! Seja bem vindo(a) ${res.profileObj.name} 😍.`
     );
     refreshTokenSetup(res);
   };
 
   const onFailure = (res) => {
-    console.log('Login failed: res:', res);
+    console.log('Falha no Login:', res);
     alert(
-      `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
+      `Falha no login. 😢 Para eventuais erros acesse: twitter.com/sivanesh_fiz`
     );
   };
 
