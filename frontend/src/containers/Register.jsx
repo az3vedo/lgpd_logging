@@ -29,7 +29,7 @@ import {userLogin} from './Login';
             senha: user.senha
         }
 
-        api.post(`http://localhost:8080/usuarios/cadastrar/${userLogin.name}/${userLogin.email}`, userToPassToBack)
+        api.post(`http://localhost:8080/usuarios/cadastrar/${userLogin.google_id}`, userToPassToBack)
     }
 
 
