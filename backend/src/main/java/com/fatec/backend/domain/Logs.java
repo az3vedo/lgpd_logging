@@ -8,31 +8,40 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import springfox.documentation.spring.web.json.Json;
 
 @Data 
 @NoArgsConstructor 
 @AllArgsConstructor 
 @Entity
 @Table(name="logs")
-public class LogUsuario implements Serializable{
+public class Logs implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_log")
 	private Long id;
-	@Column(name="nome_usuario")
-	private String nomeUsuario;
-	@Column(name="email_usuario")
-	private String emailUsuario;
+	
+	//private Json dados;
+	
+	@ManyToOne
+	@JoinColumn(name="admin_id")
+	private Admin adminId;
+	
 	private String acao;
+	
 	@Column(name="tabela")
 	private String tabelaAcao;
+	
 	@Column(name="data_da_acao")
 	private LocalDateTime dataHora;
 }
