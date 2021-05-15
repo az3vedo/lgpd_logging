@@ -22,6 +22,7 @@
       * [Sprint 2](#sprint-2)
       * [Sprint 3](#sprint-3)
       * [Sprint 4](#sprint-4)
+   * [Diagrama de caso de uso](#diagrama-caso-de-uso)
    * [Sequencia de Atividades](#sequencia)
    * [Team](#team)
 <!--te-->
@@ -74,6 +75,9 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 #### Sprint 4 (05/06) <a name="sprint-4"></a>
 * [ ] [FRONT] Tela-Consulta
 * [ ] [BACK] Filtro - Logs (Exibição dos Logs)
+
+### :date: Diagrama de Caso de Uso <a name="diagrama-caso-de-uso"></a>
+![Diagrama de caso de uso](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/diagramaCasoDeUso.png)
 
 ### :date: Sequencia de Atividades <a name="sequencia"></a>
 ![Sequencia de atividades](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/sequenciaAtividade.png)
