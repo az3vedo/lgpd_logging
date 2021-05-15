@@ -10,30 +10,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fatec.backend.domain.LogUsuario;
-import com.fatec.backend.services.LogUsuarioService;
+import com.fatec.backend.domain.Logs;
+import com.fatec.backend.services.LogsService;
 
 import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(value="/logUsuarios")
 @CrossOrigin(origins="*")
-public class LogUsuarioResource {
+public class LogsResource {
 	
 	@Autowired
-	private LogUsuarioService logUsuarioService;
+	private LogsService logUsuarioService;
 
 	@ApiOperation(value="Retorna um log de usuário buscando por seu ID")
 	@GetMapping("/buscarPorId/{id}")
-	public ResponseEntity<LogUsuario> buscarPorId(@PathVariable Long id) {
-		LogUsuario logUsuario = logUsuarioService.buscarPorId(id);
+	public ResponseEntity<Logs> buscarPorId(@PathVariable Long id) {
+		Logs logUsuario = logUsuarioService.buscarPorId(id);
 		return ResponseEntity.ok().body(logUsuario);
 	}
 	
 	@ApiOperation(value="Busca todos os logs de usuários")
 	@GetMapping("/buscarTodos")
-	public ResponseEntity<List<LogUsuario>> buscarTodos() {
-		List<LogUsuario> logsUsuarios = logUsuarioService.buscarTodos();
+	public ResponseEntity<List<Logs>> buscarTodos() {
+		List<Logs> logsUsuarios = logUsuarioService.buscarTodos();
 		return ResponseEntity.ok().body(logsUsuarios);
 	}
 	

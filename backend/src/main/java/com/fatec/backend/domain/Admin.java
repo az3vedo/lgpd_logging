@@ -17,17 +17,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="usuarios")
-public class Usuario implements Serializable{
+@Table(name="admins")
+public class Admin implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_usuario")
+	@Column(name="id_admin")
 	private Long id;
+    @Column(name="google_id")
+	private String googleId;
+    @Column(name="url_foto")
+	private String urlFoto;
+    @Column(name="nome_completo")
+	private String nomeCompleto;
 	private String email;
-	private String nome;
-	private String senha;
-	private String cpf;
 }
