@@ -10,9 +10,11 @@ const clientId =
 
 export let userLogin;
 
-const Login = () => {
+const Login = ({onSetUserIsLogged}) => {
 
   const onSuccess = (res) => {
+    onSetUserIsLogged(true);
+
     userLogin = ({
       google_id: res.profileObj.googleId,
       email: res.profileObj.email,

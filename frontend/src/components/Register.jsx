@@ -56,12 +56,15 @@ const ValidationTextField = withStyles(isEmpty => ({
 
 
 export default ({ onRegisterUser }) => {
+  const [userIsLogged, setUserIsLogged] = useState(false);
+
   const [user, setUser] = useState({
     nome: undefined,
     email: undefined,
     cpf: undefined,
     senha: undefined,
-  })
+  });
+
   const [checked, setChecked] = useState(false);
   const validateString = (word) => !!word && !!word.length;
   const validateEmail = (email) => !!email && /\S+@\S+\.\S+/.test(email);
@@ -116,7 +119,7 @@ export default ({ onRegisterUser }) => {
     return cpf.replace(/[^0-9]/gi, '').substring(0, 11);
   };
   const maskedCPF = maskCPF(user.cpf);
-  const verifyAll = () => validateCPF(user.cpf) && validateEmail(user.email) && validateString(user.nome) && validateString(user.senha) && checked;
+  const verifyAll = userIsLogged && validateCPF(user.cpf) && validateEmail(user.email) && validateString(user.nome) && validateString(user.senha) && checked;
 
   console.log(validateCPF(user.cpf), validateEmail(user.email), validateString(user.nome), validateString(user.senha), checked);
 
@@ -193,11 +196,11 @@ export default ({ onRegisterUser }) => {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button disabled={!verifyAll()} onClick={() => onRegisterUser(user)}>Cadastrar</Button>
+                  <Button disabled={!verifyAll} onClick={() => onRegisterUser(user)}>Cadastrar</Button>
                 </Grid>
                 <Grid item xs={12}>
-                  <Login />
-                  <Logout />
+                  <Login onSetUserIsLogged={setUserIsLogged}/>
+                  <Logout onSetUserIsLogged={setUserIsLogged}/>
                 </Grid>
               </Grid>
             </form>
