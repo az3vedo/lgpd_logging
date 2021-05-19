@@ -35,7 +35,7 @@ Este projeto é um sistema de logs para queries.
 Criar API que possibilite a evidenciação de ações em um banco de dados, para que em casos de criação, consulta, edição e exclusão de dados haja um meio de comprovação da ação.
 
 Adaptando o sistema de banco de dados da empresa conforme as especificações da lei 13.709/18
-conhecida como Lei Geral de Proteção de Dados (LGPD) a fim de garantir a transparência sobre o uso das informações dos usuários/clientes, evitando multas e o detrimento da empresa perante o mercado.
+conhecida como [Lei Geral de Proteção de Dados (LGPD)](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) a fim de garantir a transparência sobre o uso das informações dos usuários/clientes, evitando multas e o detrimento da empresa perante o mercado.
 
 ### :triangular_flag_on_post: Situação atual <a name="objetivo"></a>
 Sistema de banco de dados ainda não adaptado para lei geral de proteção de dados, sistema não contém logs que evidencie ações realizadas no banco de dados.
