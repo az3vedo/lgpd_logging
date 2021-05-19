@@ -5,7 +5,7 @@
 
 <p align="center">
   <kbd>
-    <img src="https://i.imgur.com/dfO7Hrq.gif" alt="Intro">
+    <img src="https://i.imgur.com/bU8KxIg.gif" alt="Intro">
   </kbd>
 </p>
 
@@ -30,9 +30,12 @@
 
 ### :lock: Projeto de Segurança da Informação <a name="projeto"></a>
 Repositório para o projeto de Segurança da Informação na FATEC SJC.
-Este projeto é um sistema de logs para queries.
+Este projeto é um sistema de logs para queries. 
  
-Criar API que possibilite a evidenciação de ações (CRUD) em um banco de dados, para que em casos de criação, consulta, edição e exclusão de dados haja um meio de comprovação da ação.
+Criar API que possibilite a evidenciação de ações em um banco de dados, para que em casos de criação, consulta, edição e exclusão de dados haja um meio de comprovação da ação.
+
+Adaptando o sistema de banco de dados da empresa conforme as especificações da lei 13.709/18
+conhecida como Lei Geral de Proteção de Dados (LGPD) a fim de garantir a transparência sobre o uso das informações dos usuários/clientes, evitando multas e o detrimento da empresa perante o mercado.
 
 ### :triangular_flag_on_post: Situação atual <a name="objetivo"></a>
 Sistema de banco de dados ainda não adaptado para lei geral de proteção de dados, sistema não contém logs que evidencie ações realizadas no banco de dados.
@@ -68,16 +71,16 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 
 #### Sprint 3 (16/05) <a name="sprint-3"></a>
 
-* [ ] [FRONT] Tela Login
-* [ ] [BD] Tabela Login
-* [ ] [BACK] Método para Login
+* [x] [FRONT] Tela Login
+* [x] [BD] Tabela Login
+* [x] [BACK] Método para Login
 
 #### Sprint 4 (05/06) <a name="sprint-4"></a>
 * [ ] [FRONT] Tela-Consulta
 * [ ] [BACK] Filtro - Logs (Exibição dos Logs)
 
 ### :date: Diagrama de Caso de Uso <a name="diagrama-caso-de-uso"></a>
-![Diagrama de caso de uso](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/diagramaCasoDeUso.png)
+![Diagrama de caso de uso](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/DiagramaDeCasoDeUso.png)
 
 ### :date: Sequencia de Atividades <a name="sequencia"></a>
 ![Sequencia de atividades](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/sequenciaAtividade.png)
