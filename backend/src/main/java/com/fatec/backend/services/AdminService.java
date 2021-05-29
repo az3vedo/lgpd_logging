@@ -16,12 +16,12 @@ public class AdminService {
 	@Autowired
 	private LogsService logsService;
 	
-	public void verificarPorGoogleId(AdminDTO adminDTO) throws Exception {
+	public void verificarPorGoogleId(AdminDTO adminDTO) {
 		Admin admin = adminRepository.findAdminByGoogleId(adminDTO.getGoogle_id());
 		
 		if(admin == null) {
 			this.inserir(adminDTO);
-			logsService.inserir(adminDTO.getGoogle_id(), null, "CADASTRO", "ADMINS");
+			logsService.inserir(adminDTO.getGoogle_id(), "CADASTRO", "ADMINS");
 		}
 	}
 	

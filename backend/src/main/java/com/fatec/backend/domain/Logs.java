@@ -31,7 +31,7 @@ public class Logs implements Serializable{
 	@Column(name="id_log")
 	private Long id;
 	
-	private String dados;
+	//private Json dados;
 	
 	@ManyToOne
 	@JoinColumn(name="admin_id")
