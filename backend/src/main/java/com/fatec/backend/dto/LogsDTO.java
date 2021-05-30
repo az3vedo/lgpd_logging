@@ -16,7 +16,7 @@ import springfox.documentation.spring.web.json.Json;
 public class LogsDTO {
 
 	private Long id;
-	private Json dados;
+	private String dados;
 	private Admin adminId;
 	private String acao;
 	private String tabelaAcao;
@@ -24,6 +24,6 @@ public class LogsDTO {
 	
 	public Logs toEntityInsert(LogsDTO logUsuarioDTO) {
 		return new Logs(
-				null, adminId, acao, tabelaAcao, dataHora);
+				null, dados, adminId, acao, tabelaAcao, dataHora);
 	}
 }

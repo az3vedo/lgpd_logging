@@ -12,6 +12,7 @@ import com.fatec.backend.domain.Admin;
 import com.fatec.backend.domain.Logs;
 import com.fatec.backend.dto.LogsDTO;
 import com.fatec.backend.repositories.LogsRepository;
+import com.fatec.backend.util.MD5;
 
 @Service
 public class LogsService {
@@ -31,10 +32,13 @@ public class LogsService {
 		return logUsuarioRepository.findAll();
 	}
 
-	public Logs inserir(String googleId, String acao, String tabelaAcao) {
+	public Logs inserir(String googleId, String cpfUsuario, String acao, String tabelaAcao) throws Exception {
 		Admin admin = adminService.buscarPorGoogleId(googleId);
 		LogsDTO logsDTO = new LogsDTO();
-		logsDTO.setDados(null);
+		
+		String dadosHash = encriptarDadosHash(cpfUsuario, admin.getEmail());
+		
+		logsDTO.setDados(dadosHash);
 		logsDTO.setAdminId(admin);
 		logsDTO.setAcao(acao);
 		logsDTO.setTabelaAcao(tabelaAcao);
@@ -43,5 +47,14 @@ public class LogsService {
 		
 		logUsuarioRepository.save(log);
 		return log;
+	}
+	
+	public String encriptarDadosHash(String cpfUser, String emailAdmin) throws Exception {
+		if(cpfUser != null) {
+			String dados =  cpfUser + emailAdmin;
+			MD5 md5 = new MD5();
+			return md5.encrypt(dados);
+		} 
+		return null;
 	}
 }

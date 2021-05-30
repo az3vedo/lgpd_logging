@@ -16,7 +16,7 @@ import com.fatec.backend.services.LogsService;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping(value="/logUsuarios")
+@RequestMapping(value="/logs")
 @CrossOrigin(origins="*")
 public class LogsResource {
 	
