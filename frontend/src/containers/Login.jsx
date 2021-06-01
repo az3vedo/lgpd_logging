@@ -4,9 +4,7 @@ import { GoogleLogin } from 'react-google-login';
 // refresh token
 import { refreshTokenSetup } from '../utils/refreshToken';
 import api from '../api/api';
-
-const clientId =
-  '375874688300-2codq537qg7meqc5uk8k47co11q8dk5a.apps.googleusercontent.com';
+import LoginCMP from '../components/Login';
 
 export let userLogin;
 
@@ -39,17 +37,7 @@ const Login = ({onSetUserIsLogged}) => {
   };
 
   return (
-    <div>
-      <GoogleLogin
-        clientId={clientId}
-        buttonText="Login"
-        onSuccess={onSuccess}
-        onFailure={onFailure}
-        cookiePolicy={'single_host_origin'}
-        style={{ marginTop: '100px' }}
-        isSignedIn={true}
-      />
-    </div>
+    <LoginCMP onSuccess={onSuccess} onFailure={onFailure} />
   );
 }
 
