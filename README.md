@@ -92,30 +92,51 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 
 <table>
     <thead>
+        <th></th>
         <th>Integrantes</th>
     </thead>
     <tbody>
-        <tr>
-            <td>Ângelo Lima</td>
-            <td><a href = "#">Linkedin</a></td>
-            <td><a href = "https://github.com/angelovlima">Github</a></td>
+    <tr>
+            <td>Scrum Master</td>
+            <td>Tábatha Fróes</td>
+            <td><a href = "https://www.linkedin.com/in/tabathafroes/">Linkedin</a></td>
+            <td><a href = "https://github.com/tabathafroes">Github</a></td>
+            
         </tr>
         <tr>
+            <td>Product Owner</td>
+            <td>Gabriel Azevedo</td>
+            <td><a href = "https://www.linkedin.com/in/gabrielsouzati">Linkedin</a></td>
+            <td><a href = "https://github.com/az3vedo">Github</a></td>
+            
+        </tr>
+        <tr>
+            <td>Develop</td>
+            <td>Ângelo Lima</td>
+            <td><a href = "https://www.linkedin.com/in/%C3%A2ngelo-lima-0003201b0/">Linkedin</a></td>
+            <td><a href = "https://github.com/angelovlima">Github</a></td>
+            
+        </tr>
+        <tr>
+            <td>Develop</td>
             <td>Larissa Takahashi</td> 
-            <td><a href = "#">Linkedin</a></td> 
+            <td><a href = "https://www.linkedin.com/in/miho-takahashi-95b78695/">Linkedin</a></td> 
             <td><a href = "https://github.com/LarissaMiho"> Github</a> </td>
         </tr>
         <tr>
+            <td>Develop</td>
             <td>Natália Neves</td>
-            <td> <a href= "#">Linkedin</a></td>
+            <td> <a href= "https://www.linkedin.com/in/natalia-reis-neves">Linkedin</a></td>
             <td> <a href= "https://github.com/natalianeves18">Github</a></td>
         </tr>
         <tr>
+            <td>Develop</td>
             <td>Maria Eduarda</td>
-            <td><a href= "#">Linkedin</a></td>
+            <td><a href= "https://www.linkedin.com/in/mariaeduarda-oliveira">Linkedin</a></td>
             <td><a href = "https://github.com/Eduarda-Oliveira">Github</a></td>
         </tr>
         <tr>
+            <td>Develop</td>
             <td>Renato Passos</td> 
             <td><a href = "#">Linkedin</a></td>
             <td><a href = "https://github.com/Renato-Passos">Github</a></td>
