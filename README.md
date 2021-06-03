@@ -95,7 +95,7 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
         <tr>
             <td>Develop</td>
             <td>Larissa Takahashi</td> 
-            <td><a href = "https://www.linkedin.com/in/miho-takahashi-95b78695/">Linkedin</a></td> 
+            <td><a href = "https://www.linkedin.com/in/larissa-miho-takahashi/">Linkedin</a></td> 
             <td><a href = "https://github.com/LarissaMiho"> Github</a> </td>
         </tr>
         <tr>
@@ -113,7 +113,7 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
         <tr>
             <td>Develop</td>
             <td>Renato Passos</td> 
-            <td><a href = "#">Linkedin</a></td>
+            <td><a href = "https://www.linkedin.com/in/renato-passos-049598185/">Linkedin</a></td>
             <td><a href = "https://github.com/Renato-Passos">Github</a></td>
       </tr>
    </tbody>
