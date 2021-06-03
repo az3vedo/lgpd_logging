@@ -24,16 +24,16 @@ public class AdminResource {
 	private LogsService logsService;
 
 	@PostMapping("/gerarLogLogin")
-	public ResponseEntity<AdminDTO> gerarLogLogin(@RequestBody AdminDTO adminDTO) throws Exception {
+	public ResponseEntity<AdminDTO> gerarLogLogin(@RequestBody AdminDTO adminDTO) {
 		adminService.verificarPorGoogleId(adminDTO);
-		logsService.inserir(adminDTO.getGoogle_id(), null, "LOGIN", "ADMINS");
+		logsService.inserir(adminDTO.getGoogle_id(), "LOGIN", "ADMINS");
 		
 		return ResponseEntity.ok(adminDTO);
 	}
 	
 	@PostMapping("/gerarLogLogout")
-	public ResponseEntity<AdminDTO> gerarLogLogout(@RequestBody AdminDTO adminDTO) throws Exception {
-		logsService.inserir(adminDTO.getGoogle_id(), null, "LOGOUT", "ADMINS");
+	public ResponseEntity<AdminDTO> gerarLogLogout(@RequestBody AdminDTO adminDTO) {
+		logsService.inserir(adminDTO.getGoogle_id(), "LOGOUT", "ADMINS");
 		return ResponseEntity.ok(adminDTO);
 	}
 }
