@@ -37,40 +37,41 @@ public class UsuarioResource {
 
 	@ApiOperation(value="Retorna um usuário buscando por seu ID")
 	@GetMapping("/buscarPorId/{google_id}/{id}")
-	public ResponseEntity<Usuario> buscarPorId(@PathVariable("google_id") String googleId, @PathVariable Long id) {
-		logUsuarioService.inserir(googleId, "BUSCA", "USUARIOS");
+	public ResponseEntity<Usuario> buscarPorId(@PathVariable("google_id") String googleId, @PathVariable Long id) throws Exception {
+		logUsuarioService.inserir(googleId, null, "BUSCA", "USUARIOS");
 		Usuario usuario = usuarioService.buscarPorId(id);
 		return ResponseEntity.ok().body(usuario);
 	}
 	
 	@ApiOperation(value="Cadastra um usuário")
 	@PostMapping("/cadastrar/{google_id}")
-	public ResponseEntity<UsuarioDTO> cadastrar(@PathVariable("google_id") String googleId, @RequestBody UsuarioDTO Usuario) {
-		logUsuarioService.inserir(googleId, "CADASTRO", "USUARIOS");
-		usuarioService.inserir(Usuario);
-		return ResponseEntity.ok(Usuario);
+	public ResponseEntity<UsuarioDTO> cadastrar(@PathVariable("google_id") String googleId, @RequestBody UsuarioDTO usuarioDTO) throws Exception {
+		logUsuarioService.inserir(googleId, usuarioDTO.getCpf(), "CADASTRO", "USUARIOS");
+		usuarioService.inserir(usuarioDTO);
+		return ResponseEntity.ok(usuarioDTO);
 	}
 	
 	@ApiOperation(value="Edita um usuário")
 	@PutMapping(value = "/editar/{google_id}/{id}")
 	public ResponseEntity<UsuarioDTO> alterar(@PathVariable("google_id") String googleId, @RequestBody UsuarioDTO usuarioDTO) throws Exception {
-		logUsuarioService.inserir(googleId, "EDIÇÃO", "USUARIOS");
+		logUsuarioService.inserir(googleId, usuarioDTO.getCpf(), "EDIÇÃO", "USUARIOS");
 		usuarioService.alterar(usuarioDTO);
 		return  ResponseEntity.ok(usuarioDTO);
 	}
 	
 	@ApiOperation(value="Deleta um usuário")
 	@DeleteMapping("excluir/{google_id}/{id}")
-	public ResponseEntity<Void> apagar(@PathVariable("google_id") String googleId, @PathVariable Long id) {
-		logUsuarioService.inserir(googleId, "EXCLUSÃO", "USUARIOS");
+	public ResponseEntity<Void> apagar(@PathVariable("google_id") String googleId, @PathVariable Long id) throws Exception {
+		Usuario usuario = usuarioService.buscarPorId(id);
+		logUsuarioService.inserir(googleId, usuario.getCpf(), "EXCLUSÃO", "USUARIOS");
 		usuarioService.deletar(id);
 		return ResponseEntity.ok().build();
 	}
 	
 	@ApiOperation(value="Busca todos os usuários")
 	@GetMapping("/buscarTodos/{google_id}")
-	public ResponseEntity<List<Usuario>> buscarTodos(@PathVariable("google_id") String googleId, @PathVariable String email) {
-		logUsuarioService.inserir(googleId, "BUSCA", "USUARIOS");
+	public ResponseEntity<List<Usuario>> buscarTodos(@PathVariable("google_id") String googleId, @PathVariable String email) throws Exception {
+		logUsuarioService.inserir(googleId, null, "BUSCA", "USUARIOS");
 		List<Usuario> usuarios = usuarioService.buscarTodos();
 		return ResponseEntity.ok().body(usuarios);
 	}
@@ -78,7 +79,7 @@ public class UsuarioResource {
 	@ApiOperation(value="Busca usuários por CPF")
 	@GetMapping("/buscarUsuarioPorCpf/{google_id}/{cpf}")
 	public ResponseEntity<List<UsuarioDTO>> buscarUsuarioPorCpf(@PathVariable("google_id") String googleId, @RequestParam String cpf) throws Exception{
-			logUsuarioService.inserir(googleId, "BUSCA", "USUARIOS");
+			logUsuarioService.inserir(googleId, null, "BUSCA", "USUARIOS");
 			List<UsuarioDTO> listaUsuarioDTO = usuarioService.buscarUsuarioPorCpf(cpf);
 		return ResponseEntity.ok().body(listaUsuarioDTO);
 	}
