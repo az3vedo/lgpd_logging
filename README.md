@@ -89,3 +89,36 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 - SM: [Tábatha Fróes](https://github.com/tabathafroes)
 - PO: [Gabriel Azevedo](https://github.com/az3vedo)
 - Devs: [Ângelo Lima](https://github.com/angelovlima), [Larissa Takahashi](https://github.com/LarissaMiho), [Natália Neves](https://github.com/natalianeves18) e [Maria Eduarda](https://github.com/Eduarda-Oliveira), [Renato Passos](https://github.com/Renato-Passos)
+
+<table>
+    <thead>
+        <th>Integrantes</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ângelo Lima</td>
+            <td><a href = "#">Linkedin</a></td>
+            <td><a href = "https://github.com/angelovlima">Github</a></td>
+        </tr>
+        <tr>
+            <td>Larissa Takahashi</td> 
+            <td><a href = "#">Linkedin</a></td> 
+            <td><a href = "https://github.com/LarissaMiho"> Github</a> </td>
+        </tr>
+        <tr>
+            <td>Natália Neves</td>
+            <td> <a href= "#">Linkedin</a></td>
+            <td> <a href= "https://github.com/natalianeves18">Github</a></td>
+        </tr>
+        <tr>
+            <td>Maria Eduarda</td>
+            <td><a href= "#">Linkedin</a></td>
+            <td><a href = "https://github.com/Eduarda-Oliveira">Github</a></td>
+        </tr>
+        <tr>
+            <td>Renato Passos</td> 
+            <td><a href = "#">Linkedin</a></td>
+            <td><a href = "https://github.com/Renato-Passos">Github</a></td>
+        </tr>
+    </tbody>
+</table>
