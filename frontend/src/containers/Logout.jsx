@@ -24,7 +24,7 @@ const Logout = ({onSetUserIsLogged}) => {
         clientId={clientId}
         buttonText="Logout"
         onLogoutSuccess={onSuccess}
-      ></GoogleLogout>
+      />
     </div>
   );
 }

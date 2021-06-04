@@ -1,13 +1,9 @@
 import React from 'react';
-import RegisterCMP from "../components/Register";
 import api from '../api/api';
-import Login from './Login';
-import Logout from './Logout';
 import {userLogin} from './Login';
+import Layout from '../components/Layout';
 
  const Register = () => {
-
-
     const maskCPF = (cpf) => {                                                                                                        
         if (!cpf) return '';                                                                                                                            
         if (cpf.length < 4) return cpf;                                                                                                                  
@@ -28,12 +24,11 @@ import {userLogin} from './Login';
             cpf: maskCPF(user.cpf),
             senha: user.senha
         }
-
-        api.post(`http://localhost:8080/usuarios/cadastrar/${userLogin.google_id}`, userToPassToBack)
+        return api.post(`http://localhost:8080/usuarios/cadastrar/${userLogin.google_id}`, userToPassToBack).then(window.console.log);
     }
 
 
-    return <RegisterCMP onRegisterUser={createData} />;
+    return <Layout option={1} title={"Cadastre um usuário"} onRegisterUser={createData} />;
 }
 
 export default Register;
