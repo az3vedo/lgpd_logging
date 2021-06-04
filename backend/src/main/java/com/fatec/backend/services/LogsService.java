@@ -36,13 +36,14 @@ public class LogsService {
 		Admin admin = adminService.buscarPorGoogleId(googleId);
 		LogsDTO logsDTO = new LogsDTO();
 		
+		LocalDateTime dataGeracaoHash = LocalDateTime.now();
 		String dadosHash = encriptarDadosHash(cpfUsuario, admin.getEmail());
 		
 		logsDTO.setDados(dadosHash);
 		logsDTO.setAdminId(admin);
 		logsDTO.setAcao(acao);
 		logsDTO.setTabelaAcao(tabelaAcao);
-		logsDTO.setDataHora(LocalDateTime.now());
+		logsDTO.setDataHora(dataGeracaoHash);
 		Logs log = logsDTO.toEntityInsert(logsDTO);
 		
 		logUsuarioRepository.save(log);
@@ -51,10 +52,10 @@ public class LogsService {
 	
 	public String encriptarDadosHash(String cpfUser, String emailAdmin) throws Exception {
 		if(cpfUser != null) {
-			String dados =  cpfUser + emailAdmin;
 			MD5 md5 = new MD5();
-			return md5.encrypt(dados);
+			return md5.encrypt(emailAdmin, cpfUser);
 		} 
 		return null;
 	}
+
 }
