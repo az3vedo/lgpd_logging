@@ -11,7 +11,7 @@ const Home = () => {
             <Grid item xs={3}>
                 <Link to="/cadastro" style={{ textDecoration: 'none'}}>
                     <SimpleButton margin={0}>
-                        Ir
+                        Cadastrar
                     </SimpleButton>
                 </Link>
             </Grid>
@@ -21,7 +21,7 @@ const Home = () => {
             <Grid item xs={3}>
                 <Link to="/consulta" style={{ textDecoration: 'none'}}>
                     <SimpleButton margin={0}>
-                        Ir
+                        Consultar
                     </SimpleButton>
                 </Link>
             </Grid>
