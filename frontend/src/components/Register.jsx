@@ -75,7 +75,7 @@ const Register = ({ onRegisterUser }) => {
       <div>
         <Grid container className={classes.grid}>
           <form className={classes.formCadastro} autoComplete="off">
-            <Grid container spacing={1} style={{ width: '80%' }}>
+            <Grid container spacing={1} style={{ width: '100%' }}>
               <Grid item xs={12}>
                 <InputField
                   error={!validateString(user.nome)}
@@ -134,15 +134,18 @@ const Register = ({ onRegisterUser }) => {
                 <SimpleButton 
                   margin={0} 
                   disabled={!verifyAll} 
-                  onClick={() => onRegisterUser(user).then(() => 
+                  onClick={() => onRegisterUser(user).then(() => {
                     setUser({
                       nome: '',
                       email: '',
                       cpf: '',
                       senha: '',
-                    })
+                    });
+                    alert(`Cadastro realizado com sucesso! 😍.`);
+                  }
                   )}
                 >
+              
                     Cadastrar
                 </SimpleButton>
               </Grid>

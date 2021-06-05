@@ -11,7 +11,7 @@ const Home = ({onSetUserIsLogged}) => {
             //eslint-disable-next-line
     }, [userLogin]);
     const nome = nomeCompleto.split(" ")[0];
-    const title = `Olá, ${nome}!`
+    const title = `Seja bem-vindo(a), ${nome}!`
     return (
         <Layout option={0} title={title} onSetUserIsLogged={onSetUserIsLogged} />
     )

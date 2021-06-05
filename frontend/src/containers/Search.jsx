@@ -17,12 +17,17 @@ const Search = ({ onSetUserIsLogged }) => {
 
     const editUser = (user) => {
         api.put(`http://localhost:8080/usuarios/editar/${userLogin.google_id}/${user.id}`, user)
-            .then(() => getAllUsers());
+            .then(() => {getAllUsers()
+                alert('Usuário atualizado com sucesso! ✌');
+            });
     }
 
     const removeUser = (id) => {
         api.delete(`http://localhost:8080/usuarios/excluir/${userLogin.google_id}/${id}`)
-            .then(() => getAllUsers());
+            .then(() => { 
+                getAllUsers();
+                alert('Usuário removido com sucesso! ✌');
+            });
     }
     const getUserByCPF = (cpf) => 
         api.get(`http://localhost:8080/usuarios/buscarUsuarioPorCpf/${userLogin.google_id}/{cpf}?cpf=${cpf}`)
