@@ -22,11 +22,13 @@ import com.fatec.backend.services.UsuarioService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
 @RequestMapping(value="/usuarios")
 @Api(value="API REST USUARIOS")
 @CrossOrigin(origins="*")
+@ApiIgnore
 public class UsuarioResource {
 	
 	@Autowired

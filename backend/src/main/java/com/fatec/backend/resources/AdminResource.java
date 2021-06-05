@@ -12,9 +12,12 @@ import com.fatec.backend.dto.AdminDTO;
 import com.fatec.backend.services.AdminService;
 import com.fatec.backend.services.LogsService;
 
+import springfox.documentation.annotations.ApiIgnore;
+
 @RestController
 @RequestMapping(value="/login")
 @CrossOrigin(origins="*")
+@ApiIgnore
 public class AdminResource {
 	
 	@Autowired

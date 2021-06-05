@@ -2,6 +2,7 @@
 import { refreshTokenSetup } from '../utils/refreshToken';
 import api from '../api/api';
 import LoginCMP from '../components/Login';
+import { GoogleLogin } from 'react-google-login';
 
 const clientId =
   '375874688300-2codq537qg7meqc5uk8k47co11q8dk5a.apps.googleusercontent.com';
