@@ -1,14 +1,14 @@
 // refresh token
 import { refreshTokenSetup } from '../utils/refreshToken';
 import api from '../api/api';
-import { GoogleLogin } from 'react-google-login';
+import LoginCMP from '../components/Login';
 
 const clientId =
   '375874688300-2codq537qg7meqc5uk8k47co11q8dk5a.apps.googleusercontent.com';
 
 export let userLogin;
 
-const Login = ({onSetUserIsLogged}) => {
+const Login = ({ onSetUserIsLogged }) => {
 
   const onSuccess = (res) => {
     onSetUserIsLogged(true);
@@ -36,6 +36,8 @@ const Login = ({onSetUserIsLogged}) => {
   };
 
   return (
+    <>
+    <LoginCMP onSuccess={onSuccess} onFailure={onFailure} />
     <div>
       <GoogleLogin
         clientId={clientId}
@@ -47,6 +49,7 @@ const Login = ({onSetUserIsLogged}) => {
         isSignedIn={true}
       />
     </div>
+    </>
   );
 }
 
