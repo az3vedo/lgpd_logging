@@ -3,9 +3,12 @@ import { refreshTokenSetup } from '../utils/refreshToken';
 import api from '../api/api';
 import LoginCMP from '../components/Login';
 
+const clientId =
+  '375874688300-2codq537qg7meqc5uk8k47co11q8dk5a.apps.googleusercontent.com';
+
 export let userLogin;
 
-const Login = ({onSetUserIsLogged}) => {
+const Login = ({ onSetUserIsLogged }) => {
 
   const onSuccess = (res) => {
     onSetUserIsLogged(true);
@@ -33,7 +36,20 @@ const Login = ({onSetUserIsLogged}) => {
   };
 
   return (
+    <>
     <LoginCMP onSuccess={onSuccess} onFailure={onFailure} />
+    <div>
+      <GoogleLogin
+        clientId={clientId}
+        buttonText="Login"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={'single_host_origin'}
+        style={{ marginTop: '100px' }}
+        isSignedIn={true}
+      />
+    </div>
+    </>
   );
 }
 

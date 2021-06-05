@@ -15,7 +15,6 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import springfox.documentation.spring.web.json.Json;
 
 @Data 
 @NoArgsConstructor 
