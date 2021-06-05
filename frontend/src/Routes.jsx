@@ -4,6 +4,7 @@ import Register from './containers/Register';
 import Login from './containers/Login';
 import Home from './containers/Home';
 import Search from './containers/Search';
+import Logs from './containers/Logs';
 
 const Routes = () => {
 
@@ -13,16 +14,18 @@ const Routes = () => {
         return (
             <>
             <Router>
-             <Route path='/' exact>
-                 <Home onSetUserIsLogged={setUserIsLogged}/>
-             </Route>
-             <Route path='/cadastro' exact>
-                 <Register onSetUserIsLogged={setUserIsLogged}/>
-             </Route>
-             <Route path='/consulta' exact >
-                 <Search onSetUserIsLogged={setUserIsLogged}/>
-             </Route>
-            {/*    <Route path='/registros' exact component={Logs} /> */}
+                <Route path='/' exact>
+                    <Home onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
+                <Route path='/cadastro' exact>
+                    <Register onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
+                <Route path='/consulta' exact >
+                    <Search onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
+                <Route path='/logs' exact >
+                    <Logs onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
             </Router>
 
             </>

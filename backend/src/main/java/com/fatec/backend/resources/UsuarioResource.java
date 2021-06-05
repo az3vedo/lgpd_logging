@@ -69,7 +69,7 @@ public class UsuarioResource {
 	}
 	
 	@ApiOperation(value="Busca todos os usuários")
-	@GetMapping("/buscarTodos/{google_id}")
+	@GetMapping("/buscarTodos/{google_id}/{email}")
 	public ResponseEntity<List<Usuario>> buscarTodos(@PathVariable("google_id") String googleId, @PathVariable String email) throws Exception {
 		logUsuarioService.inserir(googleId, null, "BUSCA", "USUARIOS");
 		List<Usuario> usuarios = usuarioService.buscarTodos();

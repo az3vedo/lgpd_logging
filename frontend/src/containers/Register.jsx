@@ -3,7 +3,7 @@ import api from '../api/api';
 import {userLogin} from './Login';
 import Layout from '../components/Layout';
 
- const Register = () => {
+ const Register = ({onSetUserIsLogged}) => {
     const maskCPF = (cpf) => {                                                                                                        
         if (!cpf) return '';                                                                                                                            
         if (cpf.length < 4) return cpf;                                                                                                                  
@@ -28,7 +28,7 @@ import Layout from '../components/Layout';
     }
 
 
-    return <Layout option={1} title={"Cadastre um usuário"} onRegisterUser={createData} />;
+    return <Layout option={1} title={"Cadastre um usuário"} onSetUserIsLogged={onSetUserIsLogged} onRegisterUser={createData} />;
 }
 
 export default Register;

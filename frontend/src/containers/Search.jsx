@@ -4,19 +4,22 @@ import { userLogin } from '../containers/Login';
 import api from '../api/api';
 
 const Search = ({ onSetUserIsLogged }) => {
-    const [users, setUsers] = useState([{
-        name: 'nicolas',
-        cpf: '468.478.028-71',
-        id: 33,
-    }]);
-    useEffect(() => {
-        api.get(`http://localhost:8080/usuarios/buscarTodos/${userLogin.google_id}` )
-            .then(window.console.log);
-    }, [userLogin]);
+    const [users, setUsers] = useState([]);
+
     const getAllUsers = () => {
-        api.get(`http://localhost:8080/usuarios/buscarTodos/${userLogin.google_id}`)
-            .then(setUsers);
+        api.get(`http://localhost:8080/usuarios/buscarTodos/${userLogin.google_id}/${userLogin.email}`)
+            .then(r=>setUsers(r.data.sort((a, b) => a.id - b.id)));
     };
+
+    useEffect(() => {
+         getAllUsers();
+    }, [userLogin]);
+
+    const editUser = (user) => {
+        api.put(`http://localhost:8080/usuarios/editar/${userLogin.google_id}/${user.id}`, user)
+            .then(() => getAllUsers());
+    }
+
     const removeUser = (id) => {
         api.delete(`http://localhost:8080/usuarios/excluir/${userLogin.google_id}/${id}`)
             .then(() => getAllUsers());
@@ -30,6 +33,7 @@ const Search = ({ onSetUserIsLogged }) => {
             option={2}
             users={users}
             title={"Consulte um usuário para uma edição ou exclusão:"}
+            editUser={editUser}
             removeUser={removeUser}
             getUserByCPF={getUserByCPF}
             onSetUserIsLogged={onSetUserIsLogged}

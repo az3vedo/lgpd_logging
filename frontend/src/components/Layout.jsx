@@ -5,6 +5,7 @@ import Register from '../components/Register';
 import { SimpleButton } from '../components/Button';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import Logs from './Logs';
 
 const WelcomeTitle = ({ children }) => <span style={{ fontSize: 34, fontWeight: 700, margin: 20 }}>{children}</span>
 const Div = ({ children }) => <div style={{
@@ -16,6 +17,8 @@ const ActionArea = ({ children }) => <Grid container spacing={2} style={{
 }}>{children}</Grid>
 
 const Layout = ({ 
+    editUser,
+    doTheL,
     onSetUserIsLogged, 
     option, 
     title, 
@@ -42,7 +45,7 @@ const Layout = ({
             <Grid item xs={4} style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Logout onSetUserIsLogged={onSetUserIsLogged} />
             </Grid>
-            <Grid item xs={10}>
+            <Grid item hidden={option === 4} xs={8}>
                 <ActionArea>
                     <Grid item hidden={option !== 0} xs={10}>
                         <HomeCMP />
@@ -51,9 +54,15 @@ const Layout = ({
                         <Register onRegisterUser={onRegisterUser} />
                     </Grid>
                     <Grid item hidden={option !== 2} xs={10}>
-                        <Search users={users} removeUser={removeUser} getUserByCPF={getUserByCPF} />
+                        <Search editUser={editUser} users={users} removeUser={removeUser} getUserByCPF={getUserByCPF} />
                     </Grid>
                 </ActionArea>
+            </Grid>
+            <Grid item hidden={option === 4} xs={12}>
+                <Link to="/logs" style={{textDecoration: "none", fontFamily: "sans-serif", fontSize: "22px", color: "#000", fontWeight: "600"}}>Histórico de Ações</Link>
+            </Grid>
+            <Grid item hidden={option !== 4} xs={12}>
+                 <Logs doTheL={doTheL} />       
             </Grid>
         </Grid>
     )
