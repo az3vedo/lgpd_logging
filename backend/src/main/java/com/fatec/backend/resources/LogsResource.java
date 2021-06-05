@@ -14,10 +14,12 @@ import com.fatec.backend.domain.Logs;
 import com.fatec.backend.services.LogsService;
 
 import io.swagger.annotations.ApiOperation;
+import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
 @RequestMapping(value="/logs")
 @CrossOrigin(origins="*")
+@ApiIgnore
 public class LogsResource {
 	
 	@Autowired
