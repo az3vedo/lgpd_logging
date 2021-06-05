@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Register from './containers/Register';
 import Login from './containers/Login';
-import Logout from './containers/Logout';
+import Home from './containers/Home';
+import Search from './containers/Search';
+import Logs from './containers/Logs';
 
 const Routes = () => {
 
@@ -12,13 +13,19 @@ const Routes = () => {
     if (userIsLogged) {
         return (
             <>
-            {/*<Header onSetUserIsLogged={setUserIsLogged} />*/}
-
             <Router>
-             {/*<Route path='/' exact component={Home} />
-                <Route path='/cadastro' exact component={Register} />
-                <Route path='/consulta' exact component={Search} />
-                <Route path='/registros' exact component={Logs} /> */}
+                <Route path='/' exact>
+                    <Home onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
+                <Route path='/cadastro' exact>
+                    <Register onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
+                <Route path='/consulta' exact >
+                    <Search onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
+                <Route path='/logs' exact >
+                    <Logs onSetUserIsLogged={setUserIsLogged}/>
+                </Route>
             </Router>
 
             </>
