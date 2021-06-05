@@ -1,6 +1,3 @@
-import React, {useState} from 'react';
-
-import { GoogleLogin } from 'react-google-login';
 // refresh token
 import { refreshTokenSetup } from '../utils/refreshToken';
 import api from '../api/api';
@@ -24,7 +21,6 @@ const Login = ({onSetUserIsLogged}) => {
 
     api.post(`http://localhost:8080/login/gerarLogLogin`, userLogin);
 
-    console.log('Login Success: currentUser:', res.profileObj);
     alert(
       `Login realizado! Seja bem vindo(a) ${res.profileObj.name} 😍.`
     );
