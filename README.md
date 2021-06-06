@@ -54,30 +54,12 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 
 ### :bookmark_tabs: Backlog <a name="backlog"></a>
 
-#### Sprint 1 (28/03) <a name="sprint-1"></a>
 
-* [x] [BACK] Método-Inserção
-* [x] [BACK] Método-Consulta
-* [x] [BACK] Método-Atualização
-* [x] [BACK] Método-Remoção
-* [x] [BACK] Método-Logs
-* [x] [BACK] Registro de Logs
-
-#### Sprint 2 (18/04) <a name="sprint-2"></a>
-
-* [x] [FRONT] Tela Cadastro
-* [x] [BD] Tabela Usuário
-* [x] [BACK-BD] Conexão BD
-
-#### Sprint 3 (16/05) <a name="sprint-3"></a>
-
-* [x] [FRONT] Tela Login
-* [x] [BD] Tabela Login
-* [x] [BACK] Método para Login
-
-#### Sprint 4 (05/06) <a name="sprint-4"></a>
-* [ ] [FRONT] Tela-Consulta
-* [ ] [BACK] Filtro - Logs (Exibição dos Logs)
+|  Sprint 1 (28/03) |  Sprint 2 (18/04)| Sprint 3 (16/05) |  Sprint 4 (05/06)|
+|---|---|---|---|
+|  Declaração do contexto  | Criação da tabela da entidade usuário no banco de dados para que a partir desses dados armazenados seja gerado um log  | Desenvolvimento da tela de login para que gere log de login  | Desenvolvimento da tela de consulta para consultar os logs gerados  |
+|  Implementação de métodos de gerações de logs no back-end, sendo eles, método de inserção, consulta, atualização, remoção e logs  |  Desenvolvimento da tela de cadastro para que gere um log do tipo inserção |  Criação da tabela da entidade login no banco de dados para que seja armazenados os log de login |  Implementação do método de log para filtrar os logs e exibí-los |
+|   |  Conexão entre banco de dados e o back-end para a persistência do log | Implementação do método de login para o adminitrador sinalizar a entrada  e gerar o log de login  | Implementação de hash para verificação de integridade dos dados  |
 
 ### :date: Diagrama de Caso de Uso <a name="diagrama-caso-de-uso"></a>
 ![Diagrama de caso de uso](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/DiagramaDeCasoDeUso.png)
@@ -86,6 +68,53 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 ![Sequencia de atividades](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/sequenciaAtividade.png)
 
 ### 	:two_women_holding_hands: Team <a name="team"></a>
-- SM: [Tábatha Fróes](https://github.com/tabathafroes)
-- PO: [Gabriel Azevedo](https://github.com/az3vedo)
-- Devs: [Ângelo Lima](https://github.com/angelovlima), [Larissa Takahashi](https://github.com/LarissaMiho), [Natália Neves](https://github.com/natalianeves18) e [Maria Eduarda](https://github.com/Eduarda-Oliveira), [Renato Passos](https://github.com/Renato-Passos)
+
+
+<table>
+    <thead>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scrum Master</td>
+        <td>Tábatha Fróes</td>
+        <td><a href = "https://www.linkedin.com/  in/tabathafroes/">Linkedin</a></td>
+        <td><a href = "https://github.com/tabathafroes">Github</a></td>       
+      </tr>
+    <tr>
+       <td>Product Owner</td>
+        <td>Gabriel Azevedo</td>
+            <td><a href = "https://www.linkedin.com/in/gabrielsouzati">Linkedin</a></td>
+            <td><a href = "https://github.com/az3vedo">Github</a></td>           
+    </tr>
+    <tr>
+            <td>Develop</td>
+            <td>Ângelo Lima</td>
+            <td><a href = "https://www.linkedin.com/in/%C3%A2ngelo-lima-0003201b0/">Linkedin</a></td>
+            <td><a href = "https://github.com/angelovlima">Github</a></td>           
+        </tr>
+        <tr>
+            <td>Develop</td>
+            <td>Larissa Takahashi</td> 
+            <td><a href = "https://www.linkedin.com/in/larissa-miho-takahashi/">Linkedin</a></td> 
+            <td><a href = "https://github.com/LarissaMiho"> Github</a> </td>
+        </tr>
+        <tr>
+            <td>Develop</td>
+            <td>Natália Neves</td>
+            <td> <a href= "https://www.linkedin.com/in/natalia-reis-neves">Linkedin</a></td>
+            <td> <a href= "https://github.com/natalianeves18">Github</a></td>
+        </tr>
+        <tr>
+            <td>Develop</td>
+            <td>Maria Eduarda</td>
+            <td><a href= "https://www.linkedin.com/in/mariaeduarda-oliveira">Linkedin</a></td>
+            <td><a href = "https://github.com/Eduarda-Oliveira">Github</a></td>
+        </tr>
+        <tr>
+            <td>Develop</td>
+            <td>Renato Passos</td> 
+            <td><a href = "https://www.linkedin.com/in/renato-passos-049598185/">Linkedin</a></td>
+            <td><a href = "https://github.com/Renato-Passos">Github</a></td>
+      </tr>
+   </tbody>
+</table>
