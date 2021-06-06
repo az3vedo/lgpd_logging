@@ -59,7 +59,7 @@ Sistema de banco de dados ainda não adaptado para lei geral de proteção de da
 |---|---|---|---|
 |  Declaração do contexto  | Criação da tabela da entidade usuário no banco de dados para que a partir desses dados armazenados seja gerado um log  | Desenvolvimento da tela de login para que gere log de login  | Desenvolvimento da tela de consulta para consultar os logs gerados  |
 |  Implementação de métodos de gerações de logs no back-end, sendo eles, método de inserção, consulta, atualização, remoção e logs  |  Desenvolvimento da tela de cadastro para que gere um log do tipo inserção |  Criação da tabela da entidade login no banco de dados para que seja armazenados os log de login |  Implementação do método de log para filtrar os logs e exibí-los |
-|   |  Conexão entre banco de dados e o back-end para a persistência do log | Implementação do método de login para o adminitrador sinalizar a entrada  e gerar o log de login  |   |
+|   |  Conexão entre banco de dados e o back-end para a persistência do log | Implementação do método de login para o adminitrador sinalizar a entrada  e gerar o log de login  | Implementação de hash para verificação de integridade dos dados  |
 
 ### :date: Diagrama de Caso de Uso <a name="diagrama-caso-de-uso"></a>
 ![Diagrama de caso de uso](https://github.com/az3vedo/lgpd_logging/blob/documentation/Imagens/DiagramaDeCasoDeUso.png)
