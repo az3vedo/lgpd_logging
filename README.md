@@ -5,7 +5,7 @@
 
 <p align="center">
   <kbd>
-    <img src="https://i.imgur.com/oggQ9xY.mp4" alt="Intro">
+    <img src="https://raw.githubusercontent.com/az3vedo/lgpd_logging/3999f0b279e878fdf5bcec39ddb1ee93d0355e10/Imagens/20210609_002026.gif" alt="Intro">
   </kbd>
 </p>
 
