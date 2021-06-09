@@ -5,7 +5,7 @@
 
 <p align="center">
   <kbd>
-    <img src="https://i.imgur.com/bU8KxIg.gif" alt="Intro">
+    <img src="https://imgur.com/sYZtyX2" alt="Intro">
   </kbd>
 </p>
 
